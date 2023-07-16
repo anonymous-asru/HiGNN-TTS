@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://QicongXie.github.io/end2endvc/ -->
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+  <title>To Be Edited</title>
+  <meta name="generator" content="Jekyll v3.9.0">
+  <meta property="og:title" content="TODO: title">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <!-- End Jekyll SEO tag -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+  <section class="page-header">
+    <!-- <h1 class="project-name">Demo PAGE</h1> -->
+    <!-- <h2 class="project-tagline"></h2> -->
+
+
+  </section>
+
+  <section class="main-content">
+    <h1 id="">
+      <center>To Be Edited</center>
+    </h1>
+
+    <h3 id="">
+      <center>Blind</center>
+      <!-- <center>Ziqian Ning<sup>1, 2</sup>, Yuepeng Jiang<sup>1</sup>, Pengcheng Zhu<sup>2</sup>, Jixun Yao<sup>1</sup>, Shuai Wang<sup>3</sup>, Lei Xie<sup>1</sup>, Mengxiao Bi<sup>2</sup></center> -->
+      <center>Blind</center>
+      <!-- <center><sup>1</sup>Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University, Xi'an, China</center>
+      <center><sup>2</sup>Fuxi AI Lab, NetEase Inc., Hangzhou, China</center>
+      <center><sup>3</sup>Shanghai Jiao Tong University, Shanghai, China</center> -->
+    </h3>
+    <!-- <center>Accepted by INTERSPEECH 2023</center> -->
+
+
+    <br><br>
+    <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+    <p>This paper introduces the singing voice conversion(SVC) model developed for the Singing Voice Conversion Challenge 2023. Based on the end-to-end framework VITS, our SVC model incorporates four key modules: a prior encoder, a posterior encoder, a decoder, and a PBTC module. We use shallow bottleneck features from a pre-trained multilingual ASR model Whisper as input for rich linguistic content, with information perturbation to prevent timbre leakage. Also, the PBTC module is used to extract multi-scale F0, thereby capturing better pitch variations. Furthermore, to better adapt to the target speaker with few amount of data, we design a three-stage training strategy to drive the model optimization. Experimental results of SVCC2023 show the superior performance of our model in naturalness while getting a middle-level similarity. Further ablations are also conducted to validate the effectiveness of our design.</p>
+
+    <table frame=void rules=none>
+      <tr>
+        <center><img src='raw/fig/vits-traininfer-1.png' width="60%"></center>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+    <br><br>
+
+
+    <h2>2. Demos -- Singing Voice Conversion<a name="Comparison"></a></h2>
+    <ul>
+      <!-- <li>Bottomline: Replace all convolution layers in the backbone model [1] with the causal version to create a naïve streaming implementation.</li>
+      <li>IBF-VC: Reinplement [2] using the backbone model.</li>
+      <li>Topline: Use the unmodified Backbone model which leverage full-context, but input BNF is extracted from a streaming ASR encoder.</li>
+      <li>DualVC-nonstreaming: Non-streaming mode of our proposed DualVC.</li>
+      <li>DualVC-streaming: Streaming mode of our proposed DualVC.</li> -->
+
+      <!-- <li>SF1 and SM1: source speakers</li>
+      <li>IDF1, IDM1, CDF1 and CDM1: target speakers</li> -->
+    </ul>
+
+    <table>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+    </br>
+    <cite>[1] X. Tian, Z. Wang, S. Yang, X. Zhou, H. Du, Y. Zhou, M. Zhang, K. Zhou, B. Sisman, L. Xie et al., “The nus & nwpu system for voice conversion challenge 2020,” in Proc. Joint Workshop for the Blizzard Challenge and Voice Conversion Challenge 2020, 2020, pp. 170–17</cite>
+    </br>
+    <cite>[2] Y. Chen, M. Tu, T. Li, X. Li, Q. Kong, J. Li, Z. Wang, Q. Tian, Y. Wang, and Y. Wang, “Streaming voice conversion via intermediate bottleneck features and non-streaming teacher guidance,” CoRR, vol. abs/2210.15158, 202</cite>
+  </section>
+</body>
+
+</html>
+
+<script type="" text/javascript>
+  window.onload = function () {
+    let scenes = ["SF1", "SM1"]
+    let models = ["IDF1", "IDM1", "CDF1", "CDM1"]
+    let all_samples = ["30006", "30009", "30015", "30024"]
+    let sample_data = `
+        <tr>
+          <td style="text-align: center; width: 150px;" rowspan=3><strong>Source Speaker<strong></td>
+          <td style="text-align: center; width: 150px;" rowspan=3><strong>Source Speech<strong></td>
+          <td style="text-align: center; width: 150px;" colspan=8><strong>Target Speaker<strong></td>
+        </tr>
+        <tr>
+        `
+    for (const id in models) {
+      model = models[id]
+      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=2><strong>' + model + '<strong></td>'
+    }
+    sample_data += `</tr><tr>`
+    for (const id in models) {
+      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=1>example</td>'
+      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=1>result</td>'
+    }
+    
+    
+    console.log(sample_data)
+    
+    for (let x in scenes) {
+      let scene = scenes[x]
+      let scene_data = ""
+      scene_data += '<tr>'
+      scene_data += '<td style="text-align: center; width: 150px;" rowspan=' + 4 + '><strong>' + scene + '<strong></td>'
+      let example_place = 0
+      for (let z in all_samples) {
+        if (z != 0) {
+          scene_data += '<tr>'
+        }
+        let sample = all_samples[z]
+        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + scene + '/source/' + sample + '_' + scene + '.wav' + '"></audio></td>'
+        for (let w in models) {
+          let model = models[w]
+          if (example_place < 4) {
+            scene_data += '<td style="text-align: center" rowspan=4><audio style="width: 150px;" controls="" src="' + './raw/samples/target/'  + model + '.wav' + '"></audio></td>'
+            example_place += 1
+          }
+          scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + scene + '/' + model + '/' + sample + '.wav' + '"></audio></td>'
+        }
+        scene_data += '</tr>'
+      }
+      sample_data += scene_data
+    }
+    document.getElementById('tbody').innerHTML = sample_data
+  }
+</script>
