@@ -7,7 +7,7 @@
 
 
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-  <title>To Be Edited</title>
+  <title>HiGNN-TTS</title>
   <meta name="generator" content="Jekyll v3.9.0">
   <meta property="og:title" content="TODO: title">
   <meta property="og:locale" content="en_US">
@@ -29,7 +29,7 @@
 
   <section class="main-content">
     <h1 id="">
-      <center>To Be Edited</center>
+      <center>HiGNN-TTS: Hierarchical Prosody Modeling with Graph Neural Networks for Expressive Long-form TTS</center>
     </h1>
 
     <h3 id="">
@@ -45,7 +45,7 @@
 
     <br><br>
     <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-    <p>This paper introduces the singing voice conversion(SVC) model developed for the Singing Voice Conversion Challenge 2023. Based on the end-to-end framework VITS, our SVC model incorporates four key modules: a prior encoder, a posterior encoder, a decoder, and a PBTC module. We use shallow bottleneck features from a pre-trained multilingual ASR model Whisper as input for rich linguistic content, with information perturbation to prevent timbre leakage. Also, the PBTC module is used to extract multi-scale F0, thereby capturing better pitch variations. Furthermore, to better adapt to the target speaker with few amount of data, we design a three-stage training strategy to drive the model optimization. Experimental results of SVCC2023 show the superior performance of our model in naturalness while getting a middle-level similarity. Further ablations are also conducted to validate the effectiveness of our design.</p>
+    <p>Recent advances in text-to-speech, particularly those based on Graph Neural Networks (GNNs), have significantly improved the expressiveness of short-form synthetic speech. However, generating human-parity long-form speech with high dynamic prosodic variations is still challenging. To address this problem, we expand the capabilities of GNNs with a hierarchical prosody modeling approach, named HiGNN-TTS. Specifically, we add a virtual global node in the graph to strengthen the interconnection of word nodes and introduce a contextual attention mechanism to broaden the prosody modeling scope of GNNs from intra-sentence to inter-sentence. Additionally, we perform hierarchical supervision from acoustic prosody on each node of the graph to capture the prosodic variations with a high dynamic range. Ablation studies show the effectiveness of HiGNN-TTS in learning hierarchical prosody. Both objective and subjective evaluations demonstrate that HiGNN-TTS significantly improves the naturalness and expressiveness of long-form synthetic speech.</p>
 
     <table frame=void rules=none>
       <tr>
