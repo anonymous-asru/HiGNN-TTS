@@ -69,60 +69,99 @@
       <li>IDF1, IDM1, CDF1 and CDM1: target speakers</li> -->
     </ul>
 
+    <h3>2.1. Short Sentence</h3>
+    <table>
+      <tbody id="tbody_short">
+      </tbody>
+    </table>
 
+    <h3>2.2. Long Sentence</h3>
+
+    <table>
+      <tbody id="tbody_long">
+      </tbody>
+    </table>
 
 </html>
 
 <script type="" text/javascript>
-  window.onload = function () {
-    let scenes = ["SF1", "SM1"]
-    let models = ["IDF1", "IDM1", "CDF1", "CDM1"]
-    let all_samples = ["30006", "30009", "30015", "30024"]
-    let sample_data = `
+  function short_form() {
+    let scenes = [
+      ["DB_19M_000033_0007", "褚师弟，承让承让，伤得不厉害吗？"],
+      ["DB_19M_000121_0001", "短话音未了，一连声的悲凄苦笑，突然发自仁立蔷薇坟前的玄衫女子口中，宛如空山鹃位、巫峡猿啼，令人闻直心酸。"],
+      ["DB_19M_000167_0007", "这表示他们并不怕冷。他们只是在等候着、磨时间。等一个人，或是等一件待做的事情。"],
+      ["DB_26F_010036_0010", "现在不要问，只问你能不能做到？”“只要他有该杀之罪，我定能做到。"],
+      ["DB_26F_010041_0005", "三个人仿佛犯了大罪似地连忙跪下，齐声说：“弟子知罪。"],
+      ["DB_26F_020022_0032", "收拾得差不多了，她哭笑不得地看着自己沾了很多纸屑的浅蓝色衬衫，世界地图一样狼狈。"]
+    ]
+    let models = ["tace", "hce", "fsbert", "proposed"]
+    let short_data = `
         <tr>
-          <td style="text-align: center; width: 150px;" rowspan=3><strong>Source Speaker<strong></td>
-          <td style="text-align: center; width: 150px;" rowspan=3><strong>Source Speech<strong></td>
-          <td style="text-align: center; width: 150px;" colspan=8><strong>Target Speaker<strong></td>
-        </tr>
-        <tr>
+          <td style="text-align: center; width: 150px;" rowspan=1><strong>Text<strong></td>
         `
     for (const id in models) {
       model = models[id]
-      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=2><strong>' + model + '<strong></td>'
+      short_data += '<td style="text-align: center; width: 150px;" rowspan=1><strong>' + model + '<strong></td>'
     }
-    sample_data += `</tr><tr>`
-    for (const id in models) {
-      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=1>example</td>'
-      sample_data += '<td style="text-align: center; width: 150px;" rowspan=1 colspan=1>result</td>'
-    }
-    
-    
-    console.log(sample_data)
+    short_data += `</tr>`
     
     for (let x in scenes) {
       let scene = scenes[x]
+      let file = scene[0]
+      let text = scene[1]
       let scene_data = ""
+
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=' + 4 + '><strong>' + scene + '<strong></td>'
-      let example_place = 0
-      for (let z in all_samples) {
-        if (z != 0) {
-          scene_data += '<tr>'
-        }
-        let sample = all_samples[z]
-        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + scene + '/source/' + sample + '_' + scene + '.wav' + '"></audio></td>'
-        for (let w in models) {
-          let model = models[w]
-          if (example_place < 4) {
-            scene_data += '<td style="text-align: center" rowspan=4><audio style="width: 150px;" controls="" src="' + './raw/samples/target/'  + model + '.wav' + '"></audio></td>'
-            example_place += 1
-          }
-          scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + scene + '/' + model + '/' + sample + '.wav' + '"></audio></td>'
-        }
-        scene_data += '</tr>'
+      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + text + '</td>'
+      for (let z in models) {
+        let model = models[z]
+        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        
       }
-      sample_data += scene_data
+      scene_data += '</tr>'
+      short_data += scene_data
     }
-    document.getElementById('tbody').innerHTML = sample_data
+    return short_data
+  }
+
+  function long_form(params) {
+    let scenes = [
+      ["long1", "照说年纪不大，可是满脸皱纹深陷，却胜似七八十岁老翁，身穿蓝布直缀，颈中挂着个婴儿所用的锦缎围延，围延上绣著幅花猫扑蝶图，已然陈旧破烂。“这怪人在这儿坐了老半天啦，怎麽动也不动？”,“别叫怪人，要叫“老伯伯”。你叫他怪人，他要生气的。”,“他还不怪吗？这麽老了，头颈里却挂了个围延。他生了气，要是胡子都翘了起来，那才好看呢。”从小舟中拿起一个莲蓬，往那人头上掷去。小舟与那怪客相距数丈，陆无双年纪虽小，手上劲力竟然不弱，这一掷也是甚准。“表妹！”待要阻止，已然不及，只见那莲蓬迳往怪客脸上飞去。那怪客头一仰，已咬住莲蓬，也不伸手去拿，舌头卷处，咬住莲蓬便大嚼起来。五个少女见他竟剥不出莲子，也不怕苦涩，就这麽连瓣连衣的吞吃，"],
+      ["long2", "洛秩终于长舒了一口气，把目光移向右侧的玻璃，表情放松而冷漠。北京秋天的晚上很有些萧索，烤肉店内外的温差让窗子上结起了密密的水珠。洛秩试探性地拿起了一杯酒，一口灌下。大家都是不被爱的人，自己没那么彪悍勇敢，只能喝酒略表敬意。世界上总有那么一种人，对于庸庸碌碌的普通人来说，他们的存在简直是一种讽刺。比如盛淮南。“对了，你跟他前女友是同班同学吧？”洛秩吓了一跳，本以为对面的人已经睡死了。"],
+    ]
+    let models = ["tace", "hce", "fsbert", "proposed"]
+    let long_data = `
+        <tr>
+          <td style="text-align: center; width: 150px;" rowspan=1><strong>Text<strong></td>
+        `
+    for (const id in models) {
+      model = models[id]
+      long_data += '<td style="text-align: center; width: 150px;" rowspan=1><strong>' + model + '<strong></td>'
+    }
+    long_data += `</tr>`
+    
+    for (let x in scenes) {
+      let scene = scenes[x]
+      let file = scene[0]
+      let text = scene[1]
+      let scene_data = ""
+
+      scene_data += '<tr>'
+      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + text + '</td>'
+      for (let z in models) {
+        let model = models[z]
+        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        
+      }
+      scene_data += '</tr>'
+      long_data += scene_data
+    }
+    return long_data
+  }
+
+  window.onload = function () {
+    document.getElementById('tbody_short').innerHTML = short_form()
+    document.getElementById('tbody_long').innerHTML = long_form()
   }
 </script>
+
