@@ -96,7 +96,7 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let short_data = `
         <tr>
-          <td style="text-align: center; width: 18%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 20%;" rowspan=1><strong>Text<strong></td>
           <td style="text-align: center; width: 26%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
@@ -113,7 +113,7 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 18%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
       scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
