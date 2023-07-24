@@ -57,24 +57,15 @@
 
 
     <h2>2. Demos <a name="Comparison"></a></h2>
-    <ul>
-      <!-- <li>Bottomline: Replace all convolution layers in the backbone model [1] with the causal version to create a naïve streaming implementation.</li>
-      <li>IBF-VC: Reinplement [2] using the backbone model.</li>
-      <li>Topline: Use the unmodified Backbone model which leverage full-context, but input BNF is extracted from a streaming ASR encoder.</li>
-      <li>DualVC-nonstreaming: Non-streaming mode of our proposed DualVC.</li>
-      <li>DualVC-streaming: Streaming mode of our proposed DualVC.</li> -->
 
-      <!-- <li>SF1 and SM1: source speakers</li>
-      <li>IDF1, IDM1, CDF1 and CDM1: target speakers</li> -->
-    </ul>
 
-    <h3>2.1. Short Form Sentence</h3>
+    <h3>2.1 Short Form Sentence</h3>
     <table>
       <tbody id="tbody_short">
       </tbody>
     </table>
 
-    <h3>2.2. Long Form Sentence</h3>
+    <h3>2.2 Long Form Sentence</h3>
 
     <table>
       <tbody id="tbody_long">
@@ -96,8 +87,8 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let short_data = `
         <tr>
-          <td style="text-align: center; width: 20%;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 26%;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 25%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 25%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
@@ -113,8 +104,8 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 25%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 25%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
         scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
@@ -134,8 +125,8 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let long_data = `
         <tr>
-          <td style="text-align: center; width: 18%;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 26%;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 25%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 25%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
@@ -151,8 +142,8 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 18%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 25%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 25%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
         scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
