@@ -9,7 +9,7 @@
   <!-- Begin Jekyll SEO tag v2.7.1 -->
   <title>HiGNN-TTS</title>
   <meta name="generator" content="Jekyll v3.9.0">
-  <meta property="og:title" content="TODO: title">
+  <meta property="og:title" content="title">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
   <!-- End Jekyll SEO tag -->
@@ -96,12 +96,12 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let short_data = `
         <tr>
-          <td style="text-align: center; width: 150px;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 150px;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 30%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 30%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
-      short_data += '<td style="text-align: center; width: 150px;" rowspan=1><strong>' + model + '<strong></td>'
+      short_data += '<td style="text-align: center; width: 9%;" rowspan=1><strong>' + model + '<strong></td>'
     }
     short_data += `</tr>`
     
@@ -113,11 +113,11 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
-        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        scene_data += '<td style="text-align: center"><audio style="width: 9%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
         
       }
       scene_data += '</tr>'
@@ -134,12 +134,12 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let long_data = `
         <tr>
-          <td style="text-align: center; width: 150px;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 150px;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 30%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 30%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
-      long_data += '<td style="text-align: center; width: 150px;" rowspan=1><strong>' + model + '<strong></td>'
+      long_data += '<td style="text-align: center; width: 9%;" rowspan=1><strong>' + model + '<strong></td>'
     }
     long_data += `</tr>`
     
@@ -151,11 +151,11 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 150px;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
-        scene_data += '<td style="text-align: center"><audio style="width: 150px;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        scene_data += '<td style="text-align: center"><audio style="width: 9%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
         
       }
       scene_data += '</tr>'
