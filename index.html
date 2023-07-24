@@ -96,12 +96,12 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let short_data = `
         <tr>
-          <td style="text-align: center; width: 30%;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 30%;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 26%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 26%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
-      short_data += '<td style="text-align: center; width: 10%;" rowspan=1><strong>' + model + '<strong></td>'
+      short_data += '<td style="text-align: center; width: 12%;" rowspan=1><strong>' + model + '<strong></td>'
     }
     short_data += `</tr>`
     
@@ -113,8 +113,8 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
         scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
@@ -134,12 +134,12 @@
     let models = ["TACE", "HCE", "FS2BERT", "HiGNN-TTS"]
     let long_data = `
         <tr>
-          <td style="text-align: center; width: 30%;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 30%;" rowspan=1><strong>English translation<strong></td>
+          <td style="text-align: center; width: 26%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 26%;" rowspan=1><strong>English translation<strong></td>
         `
     for (const id in models) {
       model = models[id]
-      long_data += '<td style="text-align: center; width: 10%;" rowspan=1><strong>' + model + '<strong></td>'
+      long_data += '<td style="text-align: center; width: 12%;" rowspan=1><strong>' + model + '<strong></td>'
     }
     long_data += `</tr>`
     
@@ -151,8 +151,8 @@
       let scene_data = ""
 
       scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 30%;" rowspan=1>' + trans + '</td>'
+      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 26%;" rowspan=1>' + trans + '</td>'
       for (let z in models) {
         let model = models[z]
         scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
