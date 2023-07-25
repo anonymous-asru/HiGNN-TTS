@@ -17,6 +17,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#157878">
   <link rel="stylesheet" href="style.css">
+  <style>
+        .method {
+            display: inline-block;
+            width: 150px; /* Adjust the width as needed */
+            font-weight: bold;
+        }
+
+        .explanation {
+            display: inline-block;
+            margin-left: 20px; /* Adjust the margin as needed */
+        }
+    </style>
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
@@ -58,10 +70,18 @@
     <h2>2. Demos <a name="Comparison"></a></h2>
     <p>Compared Methods</p>
     <ul>
-        <li>FS2-BERT: a FastSpeech2-based model, which considers context information by using cross-sentence BERT embedding [1].</li>
+      <li><span class="method">FS2-BERT:</span><span class="explanation">a FastSpeech2-based model, which considers context information by using cross-sentence BERT
+            embedding [1].</span></li> </li>
+      <li><span class="method">HCE:</span><span class="explanation">a FastSpeech2-based model, which utilizes Hierarchical Context Encoder (HCE) to predict the
+            sentence-level style embedding from the hierarchical context information [2].</span></li>
+      <li><span class="method">ATCE:</span><span class="explanation">a FastSpeech2-based model with Acoustic and Text Context Encoders (ATCE), which uses both text and
+            audio context to obtain context prosody representations [3].</span></li>        
+      <li><span class="method">HiGNN-TTS:</span><span class="explanation"> proposed method.</span></li>
+
+<!--         <li>FS2-BERT: a FastSpeech2-based model, which considers context information by using cross-sentence BERT embedding [1].</li>
         <li>HCE: a FastSpeech2-based model, which utilizes Hierarchical Context Encoder (HCE) to predict the sentence-level style embedding from the hierarchical context information [2].</li>
         <li>ATCE: a FastSpeech2-based model with Acoustic and Text Context Encoders (ATCE), which uses both text and audio context to obtain context prosody representations [3].</li>
-        <li> HiGNN: proposed method  </li>
+        <li> HiGNN: proposed method  </li> -->
     </ul>
     
     <h3>2.1 Short-form Speech</h3>
