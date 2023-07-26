@@ -73,9 +73,9 @@
       <li><b>FS2-BERT [1]:</b>a FastSpeech2-based model, which considers context information by using cross-sentence BERT
             embedding .</li> </li>
       <li><b>HCE [2]:</b>a FastSpeech2-based model, which utilizes Hierarchical Context Encoder (HCE) to predict the
-            sentence-level style embedding from the hierarchical context information [2].</li>
+            sentence-level style embedding from the hierarchical context information.</li>
       <li><b>ATCE [3]:</b>a FastSpeech2-based model with Acoustic and Text Context Encoders (ATCE), which uses both text and
-            audio context to obtain context prosody representations [3].</li>        
+            audio context to obtain context prosody representations.</li>        
       <li><b>HiGNN-TTS:</b> proposed method.</li>
 
 <!--         <li>FS2-BERT: a FastSpeech2-based model, which considers context information by using cross-sentence BERT embedding [1].</li>
@@ -136,7 +136,7 @@
       model = models[id]
       cite = ""
       if (id != 3) {
-        num = id + 1
+        num = Number(id) + 1
         cite += "[" + num + "]"
       }
       short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
@@ -179,7 +179,7 @@
       model = models[id]
       cite = ""
       if (id != 3) {
-        num = id + 1
+        num = Number(id) + 1
         cite += "[" + num + "]"
       }
       long_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
