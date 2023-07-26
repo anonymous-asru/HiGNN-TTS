@@ -98,20 +98,20 @@
     </table>
     
   <h3>References:</h3>
-  <ol>
-      <li><cite><a href="https://www.isca-speech.org/archive_v0/Interspeech_2019/pdfs/3177.pdf">
-          Tomoki Hayashi, Shinji Watanabe, Tomoki Toda, Kazuya Takeda, Shubham Toshniwal, and Karen Livescu,
-          "Pre-trained text embeddings for enhanced text-to-speech synthesis," in Proc. Interspeech, 2019, pp.
-          4430–4434.</a></cite></li>
-      <li><cite><a href="https://arxiv.org/pdf/2211.02336.pdf">
-          Detai Xin, Sharath Adavanne, Federico Ang, Ashish Kulkarni, Shinnosuke Takamichi, and Hiroshi Saruwatari,
-          "Improving speech prosody of audiobook text-to-speech synthesis with acoustic and textual contexts," in
-          Proc. ICASSP, 2023, pp. 1–5.</a></cite></li>
-      <li><cite><a href="https://arxiv.org/pdf/2203.12201.pdf">
-          Shun Lei, Yixuan Zhou, Liyang Chen, Zhiyong Wu, Shiyin Kang, and Helen Meng, "Towards expressive speaking
-          style modelling with hierarchical context information for Mandarin speech synthesis," in Proc. ICASSP
-          2022, 2022, pp. 7922–7926.</a></cite></li>
-  </ol>
+  <div>
+    <div><cite><a href="https://www.isca-speech.org/archive_v0/Interspeech_2019/pdfs/3177.pdf">
+        Tomoki Hayashi, Shinji Watanabe, Tomoki Toda, Kazuya Takeda, Shubham Toshniwal, and Karen Livescu,
+        "Pre-trained text embeddings for enhanced text-to-speech synthesis," in Proc. Interspeech, 2019, pp.
+        4430–4434.</a></cite></div>
+    <div><cite><a href="https://arxiv.org/pdf/2211.02336.pdf">
+        Detai Xin, Sharath Adavanne, Federico Ang, Ashish Kulkarni, Shinnosuke Takamichi, and Hiroshi Saruwatari,
+        "Improving speech prosody of audiobook text-to-speech synthesis with acoustic and textual contexts," in
+        Proc. ICASSP, 2023, pp. 1–5.</a></cite></div>
+    <div><cite><a href="https://arxiv.org/pdf/2203.12201.pdf">
+        Shun Lei, Yixuan Zhou, Liyang Chen, Zhiyong Wu, Shiyin Kang, and Helen Meng, "Towards expressive speaking
+        style modelling with hierarchical context information for Mandarin speech synthesis," in Proc. ICASSP
+        2022, 2022, pp. 7922–7926.</a></cite></div>
+  </div>
 
 
 </html>
@@ -134,7 +134,9 @@
         `
     for (const id in models) {
       model = models[id]
-      short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + '<strong></td>'
+      cite += "[" + num + "]"
+      }
+      short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
     }
     short_data += `</tr>`
     
@@ -172,7 +174,12 @@
         `
     for (const id in models) {
       model = models[id]
-      long_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
+      cite = ""
+      if (id != 3) {
+        num = id + 1
+        cite += "[" + num + "]"
+      }
+      long_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
     }
     long_data += `</tr>`
     
